@@ -1,0 +1,118 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.header-footer-div {
+    overflow-x: hidden; /*necessaria nao vazar tela branca*/
+    background-color: #000000f6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    align-items: center;
+
+}
+
+header {
+    margin-top: 1rem;
+    display: flex;
+    width: 98vw;                            
+    min-width: 320px;
+    height: 10vh;
+    justify-content: center;
+    align-items: center;
+    background-color: #2a29298e;
+    border-radius: .5rem;
+
+}
+
+.nav-header {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0 1rem;
+}
+
+.search-div {
+    display: flex;
+    margin: 0 0px 0 auto;
+    align-items: center;
+    gap: 0.5rem;
+    justify-content: center;
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: auto;
+    width: 100%;
+    /* min-width: 153px; */
+    max-width: 21rem;
+}
+
+.search-div input {
+    flex-grow: 1;
+    flex-shrink: 1;
+    padding: 0.3rem;
+    border: none;
+    border-radius: 0.2rem;
+    outline: none;
+    width: 99%;
+    /* min-width: 70%; */
+    max-width: 14rem;
+
+}
+
+.search-div label {
+    white-space: nowrap;
+    /* Impede que o texto "Buscar" quebre a linha */
+    background-color: #333;
+    /* Cor de fundo para o botão de buscar */
+    color: #ffffffb9;
+    /* Cor do texto */
+    padding: 0.2rem 0.3rem;
+    /* Padding para o label parecer um botão */
+    border-radius: 0.2rem;
+    cursor: pointer;
+    /* Indica que é clicável */
+}
+.search-div label:hover{
+    color: #fffffffd;
+    transform: scale(1.05)
+}
+
+
+.menu-div {
+    margin: 0px 0px 0px 0px;
+    display: flex;
+    flex-grow: 0;
+    flex-shrink: 1;
+    justify-content: center;
+    flex-basis: 15%;
+}
+
+.menu-div ul {
+    display: flex;
+    gap: 1rem;
+    list-style: none; /* Garante que não haja bolinhas */
+    flex-wrap: nowrap; /* Impede que os itens do menu quebrem linha, mas eles podem espremer */
+}
+
+.menu-div li {
+    flex-shrink: 1; /* Permite que os itens da lista encolham um pouco, se necessário */
+}
+
+.nav-header a {
+    display: inline-block;
+    text-decoration: none;
+    color: #ffffffbc;
+    cursor: pointer;
+    font-size: 1rem;
+
+}
+
+.nav-header a:hover {
+    color: #ffffff;
+    /* font-size: 1.05rem; */
+    transform: scale(1.1);
+
+}

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minha biblioteca</title>
+
+    <!--fontes-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400&family=Raleway:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400&family=Oswald:wght@700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="/assets/style/libnewPlaylist.css">
+    <link rel="stylesheet" href="/assets/style/libraryCarousel.css">
+    <link rel="stylesheet" href="/assets/style/libMusicsContainers.css">
+    <link rel="stylesheet" href="/assets/style/libclickedPlaylist.css">
+    <link rel="stylesheet" href="/assets/style/editModal.css">
+    <link rel="stylesheet" href="/assets/style/libModall.css">
+    <link rel="stylesheet" href="/assets/style/searchView.css">
+    <link rel="stylesheet" href="/assets/style/geralStyle.css">
+    <link rel="stylesheet" href="/assets/style/btnaddApiSong.css">
+    <link rel="stylesheet" href="/assets/style/theme.css">
+
+    <script src="/assets/script/theme.js" defer></script>
+    <script src="/assets/script/carouselLibrary.js" defer></script>
+    <script type="module" src="/assets/script/addapiTrack.js" defer></script>
+    <script type="module" src="/assets/script/searchfilteredApi.js" defer></script>
+    <script type="module" src="/assets/script/carouselApi.js" defer></script>
+    <script type="module" src="/assets/script/createPlaylist.js" defer></script>
+    <script type="module" src="/assets/script/renderPlaylist.js" defer></script>
+    <script type="module" src="/assets/script/playlistclickAction.js" defer></script>
+    <script type="module" src="/assets/script/modalToAddmusic.js" defer></script>
+    <script type="module" src="/assets/script/modalplaylistEdit.js" defer></script>
+    <script type="module" src="/assets/script/searchapiContent.js" defer></script>
+
+</head>
+
+<body>
+    <%- include('partials/header') %>
+
+        <main class="library-main">
+            <div>
+                <nav class="adjust-searchScreen" id="adjust-searchScreen">
+                    <ul class="static-container">
+                        <li class="my-playlist-li">
+                            <div class="title-adjust">
+                                <span class="fixed-titles-playlist">Minhas playlists</span>
+                                <div class="playlistBtn-container">
+                                    <button id="prev-btn" class="prev-btn"> < </button>
+                                    <button id="next-btn" class="next-btn"> > </button>
+                                    <div class="albumsvg-Container"><svg class="album-svg" aria-hidden="true" focusable="false"><use xlink:href="/assets/icon/album-svg.svg#album-icon"></use></svg></div>
+                                </div>
+                            </div>
+                            <div class="carousel-wrapper">
+                                    <div id="playlist-container"> 
+                                        <% allplaylistsArr.forEach(playlist => { %>
+                                                <div class="playlists-mylibrary">
+                                                    <div id="<%=playlist.id%>" class="playlist-placeholder-image">
+                                                        <div class="manage-playlist">
+                                                            <button class="edit-btn">
+                                                                <svg class="icoon-edit" aria-hidden="true" focusable="false">
+                                                                    <use xlink:href="/assets/icon/edit.svg#edi-icon"></use>
+                                                                </svg>      
+                                                            </button>
+
+                                                            <button class="del-btn">
+                                                                <svg class="icon-del" aria-hidden="true" focusable="false">
+                                                                    <use xlink:href="/assets/icon/icondel.svg#delicon"></use>
+                                                                </svg>
+                                                            </button>
+                                                        </div>
+                                                </div>
+                                                    <span class="playlists-title" id="<%= playlist.name + '-' + playlist.id%>"><%= playlist.name %></span>
+                                                </div>
+                                                
+                                        <% }); %>
+                                        <!-- inserir playlists -->
+                                    </div>
+                            </div>
+                            <div id="divToFill-before" class="divToFill-before">
+                                <button id="newplaylistBtn">Nova playlist</button>
+                            </div>
+                        </li>
+
+                        <li class="fillandMusic-container">
+                            <div id="divToFill" class="divToFill" >
+                            </div>
+                            <div id="container-for-playlist" class="dinamic-playlists">
+
+                            </div>
+                            <div class="lib-musics-container">
+                                
+                                <div id="my-musics" class="my-musics">
+                                    <span class="fixed-titles">Minhas Músicas</span>
+                                    <ul id="my-musics-ul">
+                                        <% allmusics.forEach(song => { %>
+                                            <li class="addtoPlaylist-li" data-music-id="<%=song.id%>"><a class="addtoPlaylist"><%=song.title+' - '+song.year+' -  Artist: '+song.artist+' - Album: '+song.album %></a></li>
+                                        <% }); %>
+                                    </ul>
+                                </div>
+                                <!-- <div id="my-recents" class="my-recents">
+                                    <span class="definir">Vistas Recentes</span>
+                                </div> -->
+                                <!-- ul > li(no/css) > span > div> (div-item(img),h2,p) -->
+                            </div>
+                        </li>
+                    </ul>
+                    <!-- API Container -->
+                     <ul id="apipageContainer" class="search-apicontainer">
+                        <div id="album-carousel" class="album-carousel"></div>
+                        
+                         
+
+                      </ul>  
+                </nav>
+            </div>
+        </main>
+
+            <!-- modal de adicao de musica -->
+<div id="addtoModalplaylist" class="modal-overlay">
+    <div class="modal-content">
+         <button class="modalClosebtn">&times;</button>
+         <h4>Adicionar <span id="modalMusicTitle">jkjk</span></h4>
+         <p id="modalTargetmessage"></p>
+        <div class="modal-actions">
+            <button id="modalAddbtn" disabled>Adicionar à Playlist</button>
+            <button id="modalCancelbtn">Cancelar</button>
+        </div>
+    </div>
+</div>
+        <!-- modal de adicao da playlist -->
+<div id="editPlaylistModal" class="modal-overlay-edit">
+    <div class="modal-content-edit">
+        <button id="closeEditModal" class="modalClosebtn-edit">&times;</button>
+        <h4>Editar Nome da Playlist</h4>
+        <p id="currentPlaylistName">Nome atual: </p>
+        <form id="editPlaylistForm">
+            <input type="text" id="newPlaylistNameInput" placeholder="Digite o novo nome da playlist" required>
+            <div class="modal-actions">
+                <button type="submit" id="saveEditBtn">Salvar</button>
+                <button type="button" id="cancelEditBtn">Cancelar</button>
+            </div>
+        </form>
+    </div>
+</div>
+        <%- include('partials/footer') %>
+</body>
+
+</html>

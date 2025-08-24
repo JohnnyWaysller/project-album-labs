@@ -1,0 +1,249 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.back-ground {
+    background-color: #000000;
+    height: 100vh;
+    width: 100vw;
+}
+
+.container-img-adjust {
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    width: 100%;
+    height: 100%;
+}
+
+.gradient {
+    position: absolute;
+    background-image: url('/assets/images/gradient-form.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 115%;
+    width: 82%;
+    left: -36%;
+    top: 5%;
+    opacity: .9;
+    z-index: 3;
+}
+
+.gradient-right {
+    position: absolute;
+    background-image: url('/assets/images/gradient-form.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 129%;
+    width: 54%;
+    left: 25%;
+    top: -23%;
+    opacity: 1;
+    z-index: 3;
+}
+
+
+
+.img-home {
+    position: absolute;
+    background-image: url('/assets/images/recorte-img.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 97%;
+    width: 14%;
+    left: 17%;
+    top: 0%;
+    opacity: .5;
+
+}
+
+.img-home::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 113%;
+    height: 100%;
+    background-image: radial-gradient(circle, rgb(0 0 0 / 0%) 92%, #050505 113%);
+    pointer-events: none;
+    z-index: 3;
+}
+
+.img-home-gradientcircle {
+    position: absolute;
+    background-color: #050505;
+    top: -31%;
+    left: 116%;
+    height: 143%;
+    width: 28rem;
+    /* width: 84%; */
+    z-index: 4;
+    transform: rotate(-28deg);
+    border-radius: 64%;
+    opacity: .2;
+}
+
+.head-icon {
+    position: absolute;
+    top: 19%;
+    left: 23%;
+    z-index: 5;
+    width: 3rem;
+    height: 3rem;
+}
+
+.wave-icon {
+    position: relative;
+    top: 23%;
+    left: 40%;
+    z-index: 5;
+    width: 11rem;
+    height: 2.6rem;
+}
+
+.album-labs-h2 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 100;
+    width: 16rem;
+    font-size: 2.7em;
+    color: #ffffff;
+    position: relative;
+    top: 24%;
+    left: 27%;
+    z-index: 5;
+}
+
+.album-labs-h3 {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 100;
+    width: 100%;
+    max-width: 32rem;
+    font-size: 1.15rem;
+    text-align: justify;
+    hyphens: auto;
+    color: #ffffff;
+    line-height: 1.8rem;
+    position: relative;
+    top: 40%;
+    left: 0%;
+    z-index: 5;
+}
+
+.group-text {
+    position: relative;
+    display: block;
+    height: 100%;
+    width: 100%;
+}
+
+.description {
+    position: relative;
+    margin-left: 27%;
+    margin-right: 10%;
+    min-width: 4%;
+    line-height: 1.8rem;
+    top: -53%;
+    z-index: 10;
+}
+
+.group-welcome {
+    justify-content: center;
+    align-content: center;
+    display: flex;
+    z-index: 5;
+    margin-top: 4.5rem;
+    left: 55%;
+    position: relative;
+    width: 12.1rem;
+    height: 5rem;
+    flex-wrap: wrap;
+}
+
+
+.welcome {
+    font-family: 'Inter', sans-serif;
+    font-weight: 100;
+    width: 15rem;
+    font-size: 1.5em;
+    color: #ffffff;
+    position: relative;
+    z-index: 6;
+    font-optical-sizing: auto;
+    font-weight: 200;
+    font-style: italic;
+    /* top: 55%; */
+    /* right: -69.5%; */
+    /* position: absolute; */
+}
+
+.init-aplication {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+    text-align: center;
+    margin-top: 1rem;
+    height: 1.5rem;
+    width: 10rem;
+    background-color: #dd010146;
+    color: #ffffffcc;
+    border: none;
+    border-radius: .5rem;
+    cursor: pointer;
+    z-index: 5;
+}
+
+.init-aplication:hover {
+    color: #ffffff;
+    background-color: #dd01016d;
+    height: 1.55rem;
+    width: 10.2rem;
+    border: none;
+    z-index: 5;
+}
+
+
+@media(max-width:1660px) {
+    .img-home {
+        opacity: 0.45;
+    }
+
+    .gradient {
+        opacity: 0.7;
+    }
+}
+
+@media(max-width:1570px) {
+    .img-home {
+        opacity: 0.3;
+    }
+
+    .gradient {
+        opacity: 0.6;
+    }
+}
+
+@media(max-width:1520px) {
+    .img-home {
+        opacity: 0.25;
+    }
+
+    .gradient {
+        opacity: 0.5;
+    }
+}
+
+@media(max-width:1480px) {
+    .img-home {
+        opacity: 0.2;
+    }
+
+    .gradient {
+        opacity: 0.4;
+    }
+}

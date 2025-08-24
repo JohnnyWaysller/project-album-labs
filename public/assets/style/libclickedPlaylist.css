@@ -1,0 +1,241 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*botao delete song*/
+.removePlaylistItem {
+    position: absolute;
+    right: 6.5rem;
+    top: .5rem;
+    border: none;
+    border-radius: .3rem;
+    width: 4rem;
+    font-size: .7rem;
+    color: #ffffffc4;
+    padding: .2rem;
+    cursor: pointer;
+    background-color: #441c1cdb;
+}
+.removePlaylistItem:hover{
+    background-color: #431717;
+    color: #ffffff;
+}
+
+.closeBtn {
+    position: absolute;
+    right: 1.5rem;
+    top: .5rem;
+    border: none;
+    border-radius: .3rem;
+    width: 4rem;
+    font-size: .7rem;
+    color: #ffffff;
+    padding: .2rem;
+    cursor: pointer;
+    background-color: #5454543d;
+}
+
+.closeBtn:hover{
+    opacity: 0.8;
+    background-color: #5f5f5fa4;
+}
+
+
+.sectionplaylist {
+    width: 100%;
+    height: 100%;
+    background-color: #3e3d3de1;
+    border-radius: .5rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+/*seletores transicao em sectionplaylist*/
+.sectionplaylist.entering {
+    /*Estado inicial(quando ela começa a aparecer) */
+    opacity: 0;
+    /* Começa invisível */
+    transform: translateY(10px);
+    /* Exemplo: começa um pouco abaixo */
+    max-height: 0;
+    /* Exemplo: altura inicial zero para o efeito de "abrir" */
+    overflow: hidden;
+    /* Garante que o conteúdo não vaze enquanto a altura é 0 */
+}
+
+
+.sectionplaylist.entered {
+    /* Estado final(como ela deve aparecer quando pronta) */
+    opacity: 1;
+    /* Totalmente visível */
+    transform: translateY(0);
+    /* Posição final */
+    max-height: 500px;
+    /* Grande o suficiente para conter o conteúdo */
+    transition: opacity 2.2s ease-out, transform 2.1s ease-out, max-height 2.5s ease-out;
+}
+
+.sectionplaylist.exiting {
+    /* Estado de saída(quando ela está desaparecendo) */
+    opacity: 0;
+    /* Desaparece */
+    transform: translateY(30px);
+    /* Exemplo: sobe um pouco enquanto desaparece */
+    max-height: 0px;
+    /* Encolhe */
+    transition: opacity 1.5s ease-in, transform 1.2s ease-in, max-height 1.2s ease-in;
+    overflow: hidden;
+}
+
+/*final transicao em sectionplaylist*/
+
+.grouptitlesdiv {
+    padding-top: .5rem;
+    padding-left: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    gap: .8rem;
+}
+
+.playlist-title {
+    color: #ffffff;
+    white-space: nowrap;
+}
+
+.playlisttag {
+    width: 100%;
+    justify-content: center;
+    font-size: small;
+    font-family: 'Oswald';
+    display: inline;
+    font-size: .75rem;
+}
+
+.sectionplaylist>ul {
+    overflow-x: hidden;
+    margin-top: .2rem;
+    margin-bottom: 1.5rem;
+    width: 100%;
+    padding-bottom: 1rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    background-color: #0d0d0db4;
+}
+
+.sectionplaylist>ul::-webkit-scrollbar {
+    width: 7px;
+    /* Largura da barra de rolagem vertical */
+    background-color: #000000f6;
+    /* Cor de fundo da trilha */
+    border-radius: 10px;
+    /* Para bordas arredondadas da trilha */
+}
+
+.sectionplaylist>ul::-webkit-scrollbar-thumb {
+    background-color: #000000;
+    border-radius: 5px;
+    border: 1.5px solid #6d6d6d;
+    min-height: 20px;
+}
+
+.sectionplaylist>ul::-webkit-scrollbar-track {
+    background: #000000cc
+}
+
+.item-music {
+    cursor: pointer;
+    list-style-type: none;
+    background-color: #24242470;
+    color: #dedede;
+    padding: .2rem;
+    padding-left: 2.5rem;
+    border: 1px solid #000000e1;
+    border-left: none;
+    border-right: none;
+    font-size: .8rem;
+}
+
+.item-music:hover{
+    color: #ffffff;
+    transform: scale(1.05);
+}
+
+.item-music.selectedMusictoDelete {
+    border: 1px solid #929292;
+    background-color: #bfbfbf1a;
+    border-radius: .2rem;
+    margin: .1rem;
+}
+
+/*estilo apenas do container externo(logica em layoutControl)*/
+.containerforPlaylist.entering {
+    opacity: 0;
+    max-width: 0;
+    max-height: 0;
+    padding: 0;
+    transform: translateX(0);
+}
+
+.containerforPlaylist.entered {
+    opacity: 1;
+    max-width: 100%;
+    max-height: 100%;
+    /* padding: .5rem .5rem;  */
+    transform: translateX(0);
+    /* Permanece na posição final */
+    transition: opacity 1s ease-in, max-width 1s ease-out, max-height 1.2s ease-out;
+    /* transition: max-width 2s ease-out; */
+    /* transition: max-height 2s ease-out,; */
+}
+
+/*media querie playlists renderizadas*/
+
+/* #container-for-playlist{
+    position: relative;
+    display: none;
+    /* display: flex; */
+/* width: 100%; */
+/* background-color: #2a29298e; */
+/* border-radius: .4rem;  */
+/* padding: 2.2rem 1.5rem 1.5rem 1.5rem */
+/* } */
+
+.display-flex-class {
+    display: flex;
+}
+
+
+.dinamic-playlists {
+    position: relative;
+    display: none;
+    width: 70%;
+    max-width: 38rem;
+    background-color: #2a29298e;
+    border-radius: .4rem;
+    padding: 2.2rem 1.5rem 1.5rem 1.5rem
+}
+
+.dinamic-playlists.display-flex-class {
+    display: flex;
+}
+
+@media (max-width: 645px) {
+    #container-for-playlist.dinamic-playlists.display-flex-class {
+        display: none;
+    }
+}
+
+
+/* Quando a div-da-esquerda tiver a classe 'sumir', ela irá desaparecer */
+.dinamic-playlists.display-flex-class.screen-hide{
+    display: none;
+}
+
+.newplaylist-hide{
+    display: none;
+}

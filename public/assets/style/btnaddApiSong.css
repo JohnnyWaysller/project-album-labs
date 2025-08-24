@@ -1,0 +1,65 @@
+.addtomusics-btn {
+    position: absolute;
+    top: 18px;
+    left: 69px;
+    width: 29px;
+    height: 29px;
+    /* transition: opacity 1s ease-in-out, transform .6s ease-out; */
+    transition: transform .4s ease-out;
+    background-color: transparent;
+    border: none;
+}
+
+.addtoalbum-btn {
+    position: absolute;
+    top: 17px;
+    left: 15px;
+    width: 31px;
+    height: 33px;
+    /* transition: opacity 1s ease-in-out, transform .6s ease-out; */
+    transition: transform .4s ease-out;
+    background-color: transparent;
+    border: none;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+.addtomusics-btn.final {
+    transform: translateY(-25px) translateX(17px);
+}
+
+.addtoalbum-btn.final {
+    transform: translateY(-25px) translateX(-17px);
+}
+
+.albumbtn-svg {
+    color: #c9c9c9;
+    background-color: transparent;
+    width: 100%;
+    height: 100%;
+}
+
+.albumbtn-svg:hover{
+    color: #ffffff;
+    opacity: 0.9;
+    width: 105%;
+    height: 105%;
+    cursor: pointer;
+}
+
+.music-svg:hover{
+    color: #fffffffd;
+    opacity: 0.9;
+    width: 105%;
+    height: 105%;
+    cursor: pointer;
+}
+
+.music-svg {
+    color: #cecece;
+    background-color: transparent;
+    width: 100%;
+    height: 100%;
+}

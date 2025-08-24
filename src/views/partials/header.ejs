@@ -1,0 +1,37 @@
+<link rel="stylesheet" href="/assets/style/header.css">
+
+<div class="header-footer-div">
+    <header class="header-css">
+        <nav class="nav-header">
+            <div class="search-div">
+                <input type="text" id="searchfield" placeholder="Busque o artista, música ou playlist..">
+                <label for="searchfield" id="searchItem">Buscar</label>
+            </div>
+
+            <div class="menu-div">
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/myLibrary">Biblioteca</a></li>
+                    <li><a id="linkredirect">Descubra</a></li>
+                </ul>
+            </div>
+            <button id="theme-btn" class="theme-btn">
+                <svg class="theme-svg" aria-hidden="true" focusable="false">
+                    <use xlink:href="/assets/icon/theme.svg#theme-icon"></use>
+                </svg>
+            </button>
+
+        </nav>
+    </header>
+
+    <script defer>
+        const linkredirect = document.getElementById('linkredirect')
+        const searchfield = document.getElementById('searchfield')
+
+        if (linkredirect && searchfield) {
+            linkredirect.addEventListener('click', function (event) {
+                event.preventDefault();
+                searchfield.focus();
+            });
+        }
+    </script>

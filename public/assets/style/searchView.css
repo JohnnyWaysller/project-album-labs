@@ -1,0 +1,251 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.adjust-searchScreen {
+    display: flex;
+    gap: .5rem;
+    flex-wrap: nowrap;
+}
+
+.static-container {
+    min-width: 40%;
+    width: 100%;
+}
+
+.search-apicontainer {
+    display: none;
+    /* display: flex; */
+    margin-top: 0.5rem;
+    padding: 0rem 1.1rem 0rem 1.1rem;
+    background-color: #272727d3;
+    border-radius: .4rem;
+    flex-grow: 1;
+    flex-direction: column;
+    width: 56%;
+}
+
+.search-apicontainer.display-flex-class {
+    display: flex;
+}
+
+
+.search-titles {
+    font-size: 1.1rem;
+    margin-left: 2rem;
+    /* position: relative; */
+    /* top: -1rem; */
+    /* left: 6.5rem; */
+    color: #acb6b9;
+}
+
+.artists-carousel-section {
+    height: 30%;
+    margin-top: 1.5rem;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+.carousel-section {
+    height: 30%;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+.track-carousel-section {
+    height: 33.5%;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+.album-carousel {
+    padding: 0rem 1rem 0rem 1rem;
+    width: 100%;
+    height: 100%;
+}
+
+
+.album-container {
+    width: 100%;
+    margin-top: .9rem;
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 1.7rem;
+    height: 100%;
+    transition: transform 0.3s ease-in-out;
+}
+
+.album-item,
+.track-item,
+.artist-item {
+    align-content: center;
+    align-items: center;
+    /* margin-top: 1rem; */
+    width: 115px;
+    height: 135px;
+    border-radius: .2rem;
+    text-align: center;
+    flex-shrink: 0;
+    opacity: 1;
+    transform: translateY(0) translateX(0);
+    transition: opacity 1s ease-in-out, transform .6s ease-out;
+}
+
+.artist-item {
+    width: 115px;
+    height: 135px;
+    border-radius: .2rem;
+}
+
+.track-item {
+    width: 115px;
+    height: 135px;
+    border-radius: .2rem;
+}
+
+.artist-item:hover {
+    height: 140px;
+    background-color: #3e3d3de1;
+
+}
+
+.track-item:hover {
+    height: 140px;
+    background-color: #3e3d3de1;
+}
+
+.album-item:hover {
+    height: 140px;
+    background-color: #3e3d3de1;
+}
+
+.selecteditemhover:hover {
+    padding: .2rem 0rem 2rem 0rem;
+    height: 190px;
+    background-color: #3e3d3de1;
+    border-radius: .2rem;
+    cursor: pointer;
+}
+
+.selecteditemhover {
+    border-radius: .2rem;
+}
+
+.album-item>h3,
+.track-item>h3,
+.artist-item>h3 {
+    font-size: .8rem;
+    color: #d3d3d3da;
+}
+
+.album-item>p,
+.track-item>p,
+.artist-item>p {
+    font-size: .7rem;
+    color: #d3d3d3da;
+}
+
+
+.album-prevbutton {
+    visibility: hidden;
+    background-color: #5e5e69c9;
+    color: #ffffffee;
+    opacity: 0.4;
+    border: none;
+    position: absolute;
+    cursor: pointer;
+    width: 1.8rem;
+    left: -1.5rem;
+    height: 1.8rem;
+    border-radius: 1.5rem;
+}
+
+.album-prevbutton:hover {
+    color: #ffffff;
+    opacity: 0.6;
+    transform: scale(1.05);
+}
+
+
+.album-nextbutton {
+    background-color: #5e5e69c9;
+    opacity: 0.4;
+    color: #ffffffe5;
+    border: none;
+    border-radius: 1.5rem;
+    width: 1.8rem;
+    height: 1.8rem;
+    position: absolute;
+    right: -1.5rem;
+    /* right: 0%; */
+    cursor: pointer;
+}
+
+.album-nextbutton:hover {
+    color: #ffffff;
+    opacity: 0.6;
+    transform: scale(1.05);
+}
+
+.groupbuttonsTrack {
+    z-index: 10;
+    width: 100%;
+    position: relative;
+    left: 0%;
+    top: 75%;
+}
+
+.groupbuttonsAlbums {
+    z-index: 10;
+    width: 100%;
+    position: relative;
+    left: 0%;
+    top: 44%;
+}
+
+.groupbuttonsArtist {
+    z-index: 10;
+    width: 100%;
+    position: relative;
+    left: 0%;
+    top: 15%;
+}
+
+.imgContainer,
+.imgContainer-album,
+.imgContainer-track {
+    width: 90%;
+    height: 75%;
+    border-radius: .2rem;
+    margin: auto;
+    background-color: #131313d5;
+}
+
+.imgContainer-album>img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 1.6rem;
+
+}
+
+.imgContainer-track {
+    border: solid #000000 0.5rem;
+    border-radius: 3.5rem;
+}
+
+.imgContainer-track>img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 6.3rem;
+}
+
+.imgContainer>img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 6.3rem;
+
+}

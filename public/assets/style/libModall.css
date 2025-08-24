@@ -1,0 +1,184 @@
+/* --- Estilos para o Fundo Escuro (Overlay) --- */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    background-color: rgba(0, 0, 0, 0.7);
+    /* Fundo semi-transparente */
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    z-index: 1000;
+
+    /* --- Estado Inicialmente Oculto --- */
+    opacity: 0;
+    visibility: hidden;
+
+    /* Transição para suavizar a aparição/desaparição */
+    transition: opacity 0.3s ease-out, visibility 0.3s ease-out;
+}
+
+/* --- Estilo para o Conteúdo do Modal (a caixa em si) --- */
+.modal-content {
+    background-color: #2c2c2c;
+    padding: 2rem;
+    /* Aumenta um pouco o espaçamento para uma sensação mais "limpa" */
+    border-radius: .5rem;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+    /* Sombra mais forte para destacar */
+    width: 90%;
+    /* Ajuste a largura para ser responsivo primeiro */
+    max-width: 400px;
+    position: relative;
+
+    transform: scale(0.95);
+    /* Começa um pouco menor para um efeito de entrada mais sutil */
+    transition: transform 0.3s ease-out;
+}
+
+/* --- Classe 'show' adicionada pelo JavaScript para exibir o modal --- */
+.modal-overlay.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-overlay.show .modal-content {
+    transform: scale(1);
+}
+
+/* --- Estilos dos elementos internos do modal --- */
+.modal-content h4 {
+    color: #019250;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    /* Adiciona margem para separar do parágrafo */
+    text-align: center;
+}
+
+.modal-content p {
+    color: #aaabab;
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    /* Adiciona margem para separar dos botões */
+    text-align: center;
+}
+
+.modal-content span {
+    color: #aaabab;
+}
+
+/* --- Botão de fechar (melhora de hover e focus) --- */
+.modalClosebtn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #aaa;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.modalClosebtn:hover,
+.modalClosebtn:focus {
+    color: #fff;
+    /* Fica branco ao passar o mouse ou focar */
+    outline: none;
+    /* Remove o contorno padrão, mas você pode usar 'outline: 2px solid #019250;' para acessibilidade */
+}
+
+/* --- Botões de ação --- */
+.modal-actions {
+    display: flex;
+    justify-content: space-around;
+    gap: 10px;
+}
+
+.modal-actions button {
+    padding: 0.75rem 1.5rem;
+    /* Ajusta o padding para botões maiores e mais fáceis de clicar */
+    border: none;
+    border-radius: .3rem;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+#modalAddbtn {
+    background-color: #019250;
+    color: #fff;
+}
+
+#modalAddbtn:hover:enabled {
+    background-color: #017a41;
+    /* Variação de cor ao passar o mouse */
+    transform: translateY(-2px);
+    /* Efeito sutil de elevação */
+}
+
+#modalAddbtn:disabled {
+    background-color: #444;
+    /* Cor para o botão desabilitado */
+    cursor: not-allowed;
+}
+
+#modalCancelbtn {
+    background-color: #444;
+    color: #fff;
+}
+
+#modalCancelbtn:hover {
+    background-color: #555;
+}
+
+/* --- Outros estilos (sem alterações) --- */
+.my-musics .selectedMusic {
+    border: 1px solid green;
+    border-radius: .2rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.addtoPlaylist-li {
+    display: flex;
+    align-items: center;
+}
+
+.addtoPlaylist {
+    font-size: .8rem;
+}
+
+.addtoPlaylist:hover {
+    color: #ffffff;
+    transform: scale(1.03);
+}
+
+.addMusicBtn {
+    margin-right: .4rem;
+    margin-top: -2.5rem;
+    /* margin-bottom: 1.6rem; */
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+    width: 28px;
+    height: 32px;
+}
+
+.iconadd {
+    color: #8cc974b8;
+    opacity: 0.9;
+    width: 100%;
+    height: 100%;
+}
+.iconadd:hover {
+    color: #a4f784b8;
+    width: 102%;
+    height: 102%;
+}

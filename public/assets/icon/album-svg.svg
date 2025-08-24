@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" enable-background="new 0 0 40 40" xml:space="preserve">
+  <symbol id="album-icon" viewBox="0 0 40 40" fill="currentColor">
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M7,29h2V11H7V29z M34,12v16h1V12H34z M5,28h1V12H5V28z M31,29h2V11 h-2V29z M10,30h20V10H10V30z M16.1,22.3c0.3-0.1,0.6-0.1,0.9,0l0-5.9l7-1.4l0,7.3v0.2c0,0.1,0,0.2-0.1,0.2c-0.2,0.5-0.6,0.8-1.2,1 c-0.9,0.2-1.7-0.2-1.9-0.9c-0.2-0.7,0.4-1.5,1.2-1.7c0.3-0.1,0.6-0.1,0.9,0v-4.2L18,18v5.7c0,0.1,0,0.2-0.1,0.2 c-0.2,0.5-0.6,0.9-1.2,1c-0.9,0.2-1.7-0.2-1.9-0.9C14.7,23.3,15.3,22.6,16.1,22.3z"/>
+  </symbol>
+</svg>

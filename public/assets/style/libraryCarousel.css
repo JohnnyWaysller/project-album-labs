@@ -1,0 +1,184 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/*container pai (carrocel)*/
+.carousel-wrapper {
+    overflow-x: hidden;
+    /*permite add itens ocultando na div*/
+    width: 100%;
+    position: relative;
+    /*para posicao dos botoes scroll*/
+    padding-bottom: .5rem;
+}
+
+
+#playlist-container {
+    /*container pai (playlists)*/
+    display: flex;
+    width: 100%;
+    /*alteracao*/
+    height: 25vh;
+    min-height: 11.3rem;
+    gap: 2rem;
+    /*influencia logica Js carousel*/
+    padding: .5rem 2rem 0 2rem;
+    transition: transform 0.3s ease-in-out;
+    /* transição suave JS */
+}
+
+/*div de agrupamento (div+span)*/
+.playlists-mylibrary {
+    align-content: center;
+    align-items: center;
+    margin-top: 1rem;
+    width: 94%;
+    max-width: 8.5rem;
+    /* width: 140px; */
+    /* height: 170px; */
+    height: 100%;
+    min-height: 7rem;
+    max-height: 10rem;
+    border-radius: .2rem;
+    text-align: center;
+    flex-shrink: 0;
+    opacity: 1;
+    transform: translateY(0) translateX(0);
+    transition: opacity 1s ease-in-out, transform .6s ease-out;
+}
+
+.playlists-mylibrary:hover {
+    background-color: #3e3d3de1;
+}
+
+/*classe se transicao estado inicial*/
+.playlists-mylibrary.initposition {
+    opacity: 0;
+    transform: translateY(30px) translateX(-15px);
+    /*inicia abaixo*/
+}
+
+/*div conteudo*/
+.playlists-mylibrary>div {
+    /* display: block; */
+    width: 90%;
+    height: 75%;
+    border-radius: .5rem;
+    margin: auto;
+    background-color: #131313d5;
+    /* background-color: #f5f5f5dc; */
+}
+
+.playlists-mylibrary>div:hover {
+    /* display: block; */
+    width: 93%;
+    height: 76%;
+    background-color: #101010a8;
+    /* background-color: #2c2c2cee; */
+    cursor: pointer;
+    /* background-color: #f5f5f5dc; */
+}
+
+/*span conteudo*/
+.playlists-mylibrary>span {
+    color: #ffffff;
+}
+
+/* estilo para Indicar playlist selecionada / toggle*/
+
+.playlists-mylibrary.selected {
+    /* Use a cor cinza (rgb(60, 60, 60)) com uma opacidade sutil (ex: 0.4 ou 0.5) */
+    background-color: rgba(60, 60, 60, 0.607);
+}
+
+
+/*icones edit del svg + container*/
+
+.playlists-mylibrary:hover .manage-playlist {
+    display: flex;
+
+}
+
+
+.manage-playlist {
+    /* margin-top: .5rem; */
+    padding-top: .6rem;
+    display: none;
+    margin: 0 auto;
+    width: 60%;
+    justify-content: center;
+    align-items: center;
+    gap: .6rem;
+
+}
+
+.edit-btn {
+    fill: currentColor;
+    color: #436087bd;
+    cursor: pointer;
+    width: 37px;
+    height: 37px;
+    display: block;
+    background-color: transparent;
+    border: none;
+}
+
+.edit-btn:hover {
+    fill: currentColor;
+    color: #3f5d84ee;
+    width: 42px;
+    height: 42px;
+}
+
+
+.icoon-edit {
+    width: 100%;
+    height: 100%;
+}
+
+.del-btn {
+    fill: currentColor;
+    color: #9c3a2bc7;
+    cursor: pointer;
+    width: 36px;
+    height: 34px;
+    display: block;
+    background-color: transparent;
+    border: none;
+}
+
+.del-btn:hover {
+    fill: currentColor;
+    color: #983627fa;
+    width: 38px;
+    height: 37px;
+}
+
+.icon-del {
+    width: 100%;
+    height: 100%;
+}
+
+.clearApicontentbtn{
+    position: absolute;
+    top: 7.7rem;
+    right: 2%;
+    border: none;
+    width: 29px;
+    height: 25px;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.clear-btn{
+    color: #bab7b775;
+    width: 100%;
+    height: 100%;
+}
+
+.clear-btn:hover{
+    color: #dbdbdbe8;
+    width: 102%;
+    height: 102%;
+}
